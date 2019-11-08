@@ -14,4 +14,4 @@ int main()
     }
     printf("bit of max number:%d\n", bitamount);
     printf("max number:%ld\n", maxamount);
-}
+} 
