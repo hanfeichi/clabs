@@ -23,5 +23,5 @@ int bitamount(unsigned x)
         if (x & 1)
             b++;
     }
-    return b + 1;
+    return b + 1 ;
 }
