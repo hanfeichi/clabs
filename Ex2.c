@@ -10,7 +10,7 @@ int main(void)
         x[y] = getchar();
         if (x[y] == '\n')
             break;
-        z = (z * 10 )+ (x[y] - '0');
+        z = (z * 10) + (x[y] - '0');
     }
     printf("The number of 1 in binary:%d\n", bitamount(z));
     return 0;
@@ -18,10 +18,10 @@ int main(void)
 int bitamount(unsigned x)
 {
     int b;
-    for (b = 0; x != 1; x >>= 1)
+    for (b = 0; x != 0; x >>= 1)
     {
         if (x & 1)
             b++;
     }
-    return b + 1 ;
+    return b;
 }
