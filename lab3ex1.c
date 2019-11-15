@@ -1,21 +1,28 @@
 #include <stdio.h>
-int main() int strindex(char s[], char t[])
+#define MAXLINE 1000
+int main(void)
 {
-    int i, j, k;
-    int strlen(const char *const q)
+    char s[MAXLINE];
+    char t[MAXLINE];
+    int m = 0, n = 0;
+    while ((s[m] = getchar()) != ' ')
     {
-        int p;
-        for (p = 0; q[p]; p++)
-            ;
-        return p;
+        m++;
     }
-    int len = strlen(s);
-    for (i = len - 1; i >= 0; i--)
+    while (s[m] == ' ' && ((t[n] = getchar()) != '\0') && (t[n] != '\n'))
     {
-        for (j = 1, k = 0; t[k] != 0 && s[j] == t[k]; j++, k++)
+        n++;
+    }
+    int i, o, p;
+    for (i = m - 1; i > 0; i--)
+    {
+        for (o = i, p = n - 1; s[o] == t[p]; o--, p--)
             ;
-        if (k > 0 && t[k] == '\0')
+        if (p < 0)
+        {
+            printf("%d\n", o + 1);
             return i;
+        }
     }
-    return -1;
+    printf("no found");
 }
