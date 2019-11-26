@@ -5,6 +5,7 @@
 int getop(char[]);
 void push(double);
 double pop(void);
+extern int sp;
 int main()
 {
     int type;
@@ -34,7 +35,7 @@ int main()
             else
                 printf("errer:zero divisor\n");
             break;
-        case '%':
+        case '%': /*remainder*/
             op2 = pop();
             if (op2 != 0)
                 push(((int)pop()) % ((int)op2));
@@ -54,6 +55,9 @@ int main()
             copy = pop();
             push(copy);
             push(copy);
+            break;
+        case '>': /*empty the val*/
+            sp = 0;
             break;
         case '\n':
             printf("\t%.8g\n", pop());
@@ -95,17 +99,19 @@ int getop(char s[])
         ;
     s[1] = '\0';
     i = 0;
-    if (!isdigit(c) && c != '.' && c != '-')
+    if (!isdigit(c) && c != '.' && c != '-') /*dealing with negative numbers*/
         return c;
     if (c == '-')
     {
         if (isdigit(c = getch()))
             s[++i] = c;
-        else{
-            if(c!=EOF){                
-            ungetch(c);
+        else
+        {
+            if (c != EOF)
+            {
+                ungetch(c);
             }
-        return '-';
+            return '-';
         }
     }
     if (isdigit(c))
