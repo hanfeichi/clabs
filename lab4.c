@@ -4,7 +4,7 @@
 #define NUMBER '0'
 int getop(char[]);
 void push(double);
-double pop(void);
+double pop(void); 
 double top(void);
 extern int sp;
 int main()
