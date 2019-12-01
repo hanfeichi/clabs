@@ -5,6 +5,7 @@
 int getop(char[]);
 void push(double);
 double pop(void);
+double top(void);
 extern int sp;
 int main()
 {
@@ -43,7 +44,7 @@ int main()
                 printf("errer:zero divisor\n");
             break;
         case '~': /*print the top factot*/
-            printf("%.8g\n", pop());
+            printf("%.8g\n", top());
             break;
         case '$': /*exchange the topest two factors*/
             op2 = pop();
@@ -52,8 +53,7 @@ int main()
             push(op0);
             break;
         case '<': /*copy the top factor*/
-            copy = pop();
-            push(copy);
+            copy = top();
             push(copy);
             break;
         case '>': /*empty the val*/
@@ -83,6 +83,21 @@ double pop(void)
 {
     if (sp > 0)
         return val[--sp];
+    else
+    {
+        printf("error:stack empty\n");
+        return 0.0;
+    }
+}
+double top(void)
+{
+    double result;
+    if (sp > 0)
+    {
+        result = val[--sp];
+        ++sp;
+        return result;
+    }
     else
     {
         printf("error:stack empty\n");
