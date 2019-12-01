@@ -48,7 +48,7 @@ int main()
             break;
         case '$': /*exchange the topest two factors*/
             op2 = pop();
-            op0 = pop();
+            op0 = pop(); 
             push(op2);
             push(op0);
             break;
