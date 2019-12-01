@@ -7,7 +7,7 @@ void push(double);
 double pop(void); 
 double top(void);
 extern int sp;
-int main() 
+int main()
 { 
     int type;
     double op2, op0, copy; 
@@ -138,7 +138,7 @@ int getop(char s[])
     s[i] = '\0';
     if (c != EOF)
         ungetch(c);
-    return NUMBER;
+    return NUMBER; 
 }
 #define BUFSIZE 100
 char buf[BUFSIZE];
