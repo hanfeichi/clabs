@@ -58,7 +58,7 @@ int main()
             break;
         case '>': /*empty the val*/
             sp = 0;
-            break;
+            break; 
         case '\n':
             printf("\t%.8g\n", pop());
             break;
