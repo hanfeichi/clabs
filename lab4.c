@@ -10,7 +10,7 @@ extern int sp;
 int main()
 {
     int type;
-    double op2, op0, copy;
+    double op2, op0, copy; 
     char s[MAXOP];
     while ((type = getop(s)) != EOF)
     {
