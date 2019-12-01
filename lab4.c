@@ -8,7 +8,7 @@ double pop(void);
 double top(void);
 extern int sp;
 int main()
-{
+{ 
     int type;
     double op2, op0, copy; 
     char s[MAXOP];
